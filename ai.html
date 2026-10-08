@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AI — BESTAS.KZ</title>
+  <meta name="theme-color" content="#050706">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-page="ai">
+
+<header class="site-header">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">✦</span>
+      <span class="brand-text"><b>BESTAS</b><small data-i18n="brand_sub">Қазақтың ұлттық ойыны</small></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" data-nav="home" data-i18n="nav_home">Главная</a>
+      <a href="index.html#history" data-nav="history" data-i18n="nav_history">История</a>
+      <a href="index.html#rules" data-nav="rules" data-i18n="nav_rules">Правила</a>
+      <a href="game.html" data-nav="game" data-i18n="nav_game">Игра</a>
+      <a href="ai.html" data-nav="ai" data-i18n="nav_ai">AI</a>
+    </nav>
+    <div class="lang"><button data-lang="ru">RU</button><button data-lang="kz">KZ</button><button data-lang="en">EN</button></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="tag" style="color:var(--green)" data-i18n="aib_tag">AI-помощник</span>
+    <h1 class="h2" data-i18n="ai_title">Спроси про Бестас</h1>
+    <p class="lead" data-i18n="ai_sub"></p>
+  </div>
+
+  <section class="chat">
+    <div class="chat-top">
+      <div class="av">✦</div>
+      <div><b data-i18n="ai_name">Помощник по Бестасу</b><small>● <span data-i18n="ai_online">онлайн</span></small></div>
+    </div>
+    <div class="chat-list" id="chatList" aria-live="polite">
+      <div class="msg ai" data-i18n="ai_hello">Сәлем! Я помощник по Бестасу. Спроси про игру, правила или историю.</div>
+    </div>
+    <div class="quick">
+      <button class="chip" type="button" data-q="q1">Что такое Бестас?</button>
+      <button class="chip" type="button" data-q="q2">Какие правила игры?</button>
+      <button class="chip" type="button" data-q="q3">Как появилась эта игра?</button>
+      <button class="chip" type="button" data-q="q4">Что развивает Бестас?</button>
+    </div>
+    <form class="chat-form" id="chatForm" autocomplete="off">
+      <input id="chatInput" type="text" maxlength="500" data-i18n-ph="ai_ph" placeholder="Напиши вопрос…" aria-label="Message">
+      <button class="btn primary" id="chatSend" type="submit">➤ <span data-i18n="btn_send">Отправить</span></button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span><b class="gold">✦ BESTAS.KZ</b></span>
+    <span data-i18n="foot"></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

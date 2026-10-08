@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Игра — BESTAS.KZ</title>
+  <meta name="theme-color" content="#050706">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-page="game">
+
+<header class="site-header">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">✦</span>
+      <span class="brand-text"><b>BESTAS</b><small data-i18n="brand_sub">Қазақтың ұлттық ойыны</small></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" data-nav="home" data-i18n="nav_home">Главная</a>
+      <a href="index.html#history" data-nav="history" data-i18n="nav_history">История</a>
+      <a href="index.html#rules" data-nav="rules" data-i18n="nav_rules">Правила</a>
+      <a href="game.html" data-nav="game" data-i18n="nav_game">Игра</a>
+      <a href="ai.html" data-nav="ai" data-i18n="nav_ai">AI</a>
+    </nav>
+    <div class="lang"><button data-lang="ru">RU</button><button data-lang="kz">KZ</button><button data-lang="en">EN</button></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="tag" data-i18n="game_tag">Игра</span>
+    <h1 class="h2" data-i18n="game_title">Собери 4 — поймай 1</h1>
+    <p class="lead" data-i18n="game_sub"></p>
+  </div>
+
+  <div class="game-layout">
+    <section>
+      <div class="hud">
+        <div class="stat"><small data-i18n="st_score">Очки</small><b class="gold" id="score">0</b></div>
+        <div class="stat"><small data-i18n="st_level">Уровень</small><b id="level">1/20</b></div>
+        <div class="stat"><small data-i18n="st_att">Попытки</small><div class="dots" id="att"></div></div>
+        <div class="stat"><small data-i18n="st_time">Время</small><b class="green" id="time">3.2с</b></div>
+      </div>
+
+      <div class="status" id="status" role="status" aria-live="polite">Готов к игре</div>
+      <div class="timebar"><i id="bar"></i></div>
+
+      <div class="arena" id="arena">
+        <div class="slots" id="slots" aria-hidden="true">
+          <span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot last"></span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn ghost" id="restartBtn" data-i18n="btn_restart_lvl">Заново</button>
+        <button class="btn primary catch" id="catchBtn" disabled data-i18n="btn_catch">Поймать!</button>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="card">
+        <h3 data-i18n="levels_title">20 уровней</h3>
+        <div class="levels" id="levels"></div>
+        <div class="legend">
+          <span style="--c:var(--green)" data-i18n="lg_done">Пройден</span>
+          <span style="--c:var(--gold)" data-i18n="lg_cur">Текущий</span>
+          <span style="--c:#555" data-i18n="lg_lock">Закрыт</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat" style="border:0;background:none;padding:0;margin-bottom:14px"><small data-i18n="st_best">Рекорд</small><b class="gold" id="best">0</b></div>
+        <h3 data-i18n="how_title">Как играть</h3>
+        <p class="how" data-i18n="how_text"></p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span><b class="gold">✦ BESTAS.KZ</b></span>
+    <span data-i18n="foot"></span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" id="mCard" role="dialog" aria-modal="true">
+    <div class="modal-ic" id="mIc">🏆</div>
+    <h3 id="mT"></h3>
+    <p id="mD"></p>
+    <div class="modal-actions" id="mA"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

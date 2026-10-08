@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BESTAS.KZ — Қазақтың ұлттық ойыны</title>
+  <meta name="description" content="BESTAS.KZ — современная интерактивная платформа о казахской национальной игре Бестас: история, правила, игра на 20 уровней и AI-помощник.">
+  <meta name="theme-color" content="#050706">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-page="home">
+
+<header class="site-header">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">✦</span>
+      <span class="brand-text"><b>BESTAS</b><small data-i18n="brand_sub">Қазақтың ұлттық ойыны</small></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" data-nav="home" data-i18n="nav_home">Главная</a>
+      <a href="index.html#history" data-nav="history" data-i18n="nav_history">История</a>
+      <a href="index.html#rules" data-nav="rules" data-i18n="nav_rules">Правила</a>
+      <a href="game.html" data-nav="game" data-i18n="nav_game">Игра</a>
+      <a href="ai.html" data-nav="ai" data-i18n="nav_ai">AI</a>
+    </nav>
+    <div class="lang"><button data-lang="ru">RU</button><button data-lang="kz">KZ</button><button data-lang="en">EN</button></div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="eyebrow"><i></i><span data-i18n="hero_eyebrow">Қазақтың ұлттық ойыны</span></div>
+        <h1 data-i18n-html="hero_title">Бестас — <span class="gold">традиция,</span> которую можно почувствовать руками.</h1>
+        <p class="lead" data-i18n="hero_text">Пять камней, быстрые руки и точный расчёт. Узнай историю казахской игры, выучи правила и пройди 20 уровней прямо в браузере.</p>
+        <div class="btns">
+          <a class="btn primary" href="game.html"><span data-i18n="btn_play">Играть в Бестас</span> →</a>
+          <a class="btn ghost" href="#history" data-i18n="btn_history">Узнать историю</a>
+        </div>
+        <div class="meta">
+          <div><b data-i18n="hero_m1">5 камней</b><span>Five Stones</span></div>
+          <span class="dot"></span>
+          <div><b data-i18n="hero_m2">20 уровней</b><span>Traditional Kazakh Game</span></div>
+          <span class="dot"></span>
+          <div><b data-i18n="hero_m3">AI-помощник</b><span>RU · KZ · EN</span></div>
+        </div>
+      </div>
+      <div class="stage reveal" aria-hidden="true">
+        <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+        <i class="stone c1" style="--x:30%;--y:62%;--sz:19%;--d:0s"></i>
+        <i class="stone c2" style="--x:70%;--y:66%;--sz:17%;--d:-1.2s"></i>
+        <i class="stone c3" style="--x:22%;--y:34%;--sz:15%;--d:-2.4s"></i>
+        <i class="stone c4" style="--x:76%;--y:32%;--sz:16%;--d:-3.6s"></i>
+        <i class="stone c-gold" style="--x:50%;--y:46%;--sz:21%;--d:-.6s"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- О БЕСТАСЕ -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="tag" data-i18n="about_tag">О Бестасе</span>
+        <h2 class="h2" data-i18n="about_title">Простая игра. Большой смысл.</h2>
+        <p class="lead" data-i18n="about_text">Бестас — казахская игра с пятью камнями.</p>
+      </div>
+      <div class="grid g3">
+        <article class="card reveal"><div class="ic">✦</div><h3 data-i18n="ab1_t">Что это</h3><p data-i18n="ab1_d"></p></article>
+        <article class="card reveal"><div class="ic">❖</div><h3 data-i18n="ab2_t">Почему важна</h3><p data-i18n="ab2_d"></p></article>
+        <article class="card reveal"><div class="ic">◎</div><h3 data-i18n="ab3_t">Что даёт</h3><p data-i18n="ab3_d"></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ИСТОРИЯ -->
+  <section class="section" id="history">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="tag" data-i18n="hist_tag">История</span>
+        <h2 class="h2" data-i18n="hist_title">Игра, которая вышла из степи</h2>
+        <p data-i18n="h_p1"></p>
+        <p data-i18n="h_p2"></p>
+        <p data-i18n="h_p3"></p>
+      </div>
+      <div class="vis reveal">
+        <div class="stage" style="max-width:380px" aria-hidden="true">
+          <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+          <i class="stone c5" style="--x:50%;--y:24%;--sz:17%;--d:-1s"></i>
+          <i class="stone c2" style="--x:78%;--y:50%;--sz:16%;--d:-2s"></i>
+          <i class="stone c4" style="--x:62%;--y:80%;--sz:17%;--d:-3s"></i>
+          <i class="stone c3" style="--x:30%;--y:76%;--sz:16%;--d:-4s"></i>
+          <i class="stone c1" style="--x:20%;--y:44%;--sz:16%;--d:-5s"></i>
+        </div>
+        <p class="cap" data-i18n="h_cap">Пять камней — вся игра</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРАВИЛА -->
+  <section class="section" id="rules">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="tag" data-i18n="rules_tag">Правила</span>
+        <h2 class="h2" data-i18n="rules_title">Четыре шага до победы</h2>
+      </div>
+      <div class="grid g4">
+        <article class="card step reveal"><div class="num">01</div><h3 data-i18n="r1_t"></h3><p data-i18n="r1_d"></p></article>
+        <article class="card step reveal"><div class="num">02</div><h3 data-i18n="r2_t"></h3><p data-i18n="r2_d"></p></article>
+        <article class="card step reveal"><div class="num">03</div><h3 data-i18n="r3_t"></h3><p data-i18n="r3_d"></p></article>
+        <article class="card step reveal"><div class="num">04</div><h3 data-i18n="r4_t"></h3><p data-i18n="r4_d"></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- НАВЫКИ -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="tag" data-i18n="skills_tag">Навыки</span>
+        <h2 class="h2" data-i18n="skills_title">Что развивает Бестас</h2>
+      </div>
+      <div class="grid g6">
+        <div class="card skill reveal"><div class="ic">✋</div><b data-i18n="sk1"></b></div>
+        <div class="card skill reveal"><div class="ic">⚡</div><b data-i18n="sk2"></b></div>
+        <div class="card skill reveal"><div class="ic">⇄</div><b data-i18n="sk3"></b></div>
+        <div class="card skill reveal"><div class="ic">◎</div><b data-i18n="sk4"></b></div>
+        <div class="card skill reveal"><div class="ic">⌖</div><b data-i18n="sk5"></b></div>
+        <div class="card skill reveal"><div class="ic">❖</div><b data-i18n="sk6"></b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ГАЛЕРЕЯ -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="tag" data-i18n="gal_tag">Галерея</span>
+        <h2 class="h2" data-i18n="gal_title">Камни, руки, традиция</h2>
+      </div>
+      <div class="gal">
+        <!-- Положи свои фото в папку asets/ с именами gallery-1.jpg … gallery-4.jpg — они автоматически заменят иллюстрации -->
+        <figure class="gtile reveal">
+          <div class="art"><i class="stone c1" style="--x:28%;--y:60%"></i><i class="stone c3" style="--x:48%;--y:42%"></i><i class="stone c2" style="--x:62%;--y:68%"></i><i class="stone c4" style="--x:76%;--y:44%"></i><i class="stone c5" style="--x:40%;--y:78%"></i></div>
+          <img src="asets/gallery-1.jpg" alt="Бестас" loading="lazy">
+          <figcaption data-i18n="g1">Пять камней</figcaption>
+        </figure>
+        <figure class="gtile reveal">
+          <div class="art a2"><i class="stone c2" style="--x:30%;--y:56%"></i><i class="stone c-gold" style="--x:64%;--y:34%"></i><i class="stone c4" style="--x:66%;--y:72%"></i></div>
+          <img src="asets/gallery-2.jpg" alt="" loading="lazy">
+          <figcaption data-i18n="g2">В процессе игры</figcaption>
+        </figure>
+        <figure class="gtile reveal">
+          <div class="art a3"><i class="stone c3" style="--x:36%;--y:50%"></i><i class="stone c1" style="--x:62%;--y:62%"></i><i class="stone c5" style="--x:54%;--y:30%"></i></div>
+          <img src="asets/gallery-3.jpg" alt="" loading="lazy">
+          <figcaption data-i18n="g3">Руки и ловкость</figcaption>
+        </figure>
+        <figure class="gtile reveal">
+          <div class="art a4"><i class="stone c1" style="--x:20%;--y:55%"></i><i class="stone c2" style="--x:35%;--y:40%"></i><i class="stone c3" style="--x:50%;--y:62%"></i><i class="stone c4" style="--x:66%;--y:44%"></i><i class="stone c5" style="--x:80%;--y:58%"></i></div>
+          <img src="asets/gallery-4.jpg" alt="" loading="lazy">
+          <figcaption data-i18n="g4">Традиционная атмосфера</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI -->
+  <section class="section" id="ai">
+    <div class="wrap">
+      <div class="panel reveal">
+        <span class="tag" style="color:var(--green)" data-i18n="aib_tag">AI-помощник</span>
+        <h2 class="h2" data-i18n="aib_title">Спроси про Бестас</h2>
+        <p class="lead" data-i18n="aib_text"></p>
+        <div class="chips">
+          <button class="chip" data-q="q1">Что такое Бестас?</button>
+          <button class="chip" data-q="q2">Какие правила игры?</button>
+          <button class="chip" data-q="q3">Как появилась эта игра?</button>
+          <button class="chip" data-q="q4">Что развивает Бестас?</button>
+        </div>
+        <a class="btn green" href="ai.html" data-i18n="btn_ask">Открыть чат</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta reveal">
+    <div class="wrap">
+      <h2 class="h2" data-i18n="cta_title">Готов сыграть?</h2>
+      <p class="lead" data-i18n="cta_text">Первый уровень совсем лёгкий.</p>
+      <a class="btn primary" href="game.html"><span data-i18n="btn_play">Играть в Бестас</span> →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span><b class="gold">✦ BESTAS.KZ</b></span>
+    <span data-i18n="foot">BESTAS.KZ — современный взгляд на казахскую игру.</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
