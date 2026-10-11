@@ -204,6 +204,48 @@
   </div>
 </footer>
 
+<script src="cards.js"></script>
 <script src="app.js"></script>
+<script src="translations.js"></script>
+
+<script>
+(() => {
+  const links = document.querySelectorAll(".nav [data-nav]");
+
+  function updateActiveNavigation() {
+    let activePage = "home";
+    const checkLine = 125;
+
+    ["history", "rules"].forEach(id => {
+      const section = document.getElementById(id);
+
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+
+      if (rect.top <= checkLine && rect.bottom > checkLine) {
+        activePage = id;
+      }
+    });
+
+    links.forEach(link => {
+      const active = link.dataset.nav === activePage;
+
+      link.classList.toggle("active", active);
+      link.classList.toggle("on", active);
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNavigation, {
+    passive: true
+  });
+
+  window.addEventListener("resize", updateActiveNavigation);
+  window.addEventListener("hashchange", updateActiveNavigation);
+
+  updateActiveNavigation();
+})();
+</script>
+
 </body>
 </html>

@@ -358,3 +358,255 @@ h1,h2,h3{font-family:Manrope,Inter,system-ui,sans-serif;letter-spacing:-.03em;li
 .arena .stone.flying { z-index: 6; }
 .arena .stone.collected { visibility: hidden; }
 
+/* ===== BESTAS GAME STONES FIX ===== */
+
+.arena .stone {
+  width: 58px;
+  height: 52px;
+  min-width: 42px;
+  min-height: 38px;
+  --s1: #a99d86;
+  --s2: #716753;
+  --s3: #37301f;
+  z-index: 3;
+}
+
+.arena .stone:nth-of-type(1) {
+  left: 25%;
+  top: 42%;
+}
+
+.arena .stone:nth-of-type(2) {
+  left: 37%;
+  top: 55%;
+}
+
+.arena .stone:nth-of-type(3) {
+  left: 50%;
+  top: 38%;
+}
+
+.arena .stone:nth-of-type(4) {
+  left: 63%;
+  top: 54%;
+}
+
+.arena .stone:nth-of-type(5) {
+  left: 75%;
+  top: 42%;
+}
+
+.arena .stone.selected,
+.arena .stone.sel {
+  --s1: #f6dc9a;
+  --s2: #c69a42;
+  --s3: #6b4d18;
+  box-shadow:
+    0 0 0 3px rgba(241, 204, 122, 0.75),
+    0 0 30px rgba(214, 168, 79, 0.55);
+}
+
+.arena .stone.thrown,
+.arena .stone.flying {
+  z-index: 6;
+}
+
+.arena .stone.collected {
+  visibility: hidden;
+}
+
+/* ===== CONTENT VISIBILITY FIX ===== */
+
+.js .reveal.in,
+.js .reveal.is-visible,
+.js .reveal-up.in,
+.js .reveal-up.is-visible,
+.js [data-reveal].in,
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== BESTAS STONE FLIGHT ANIMATION ===== */
+
+.arena .stone.thrown {
+  animation: bestas-stone-flight 0.9s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes bestas-stone-flight {
+  0%, 100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -120px;
+  }
+}
+
+/* BESTAS.KZ — EMERGENCY CONTENT VISIBILITY FIX */
+
+.js .reveal,
+.js .reveal.in,
+.js .reveal.is-visible,
+.js .reveal-up,
+.js .reveal-up.in,
+.js .reveal-up.is-visible,
+.js [data-reveal],
+.js [data-reveal].in,
+.js [data-reveal].is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* ===== ACTIVE NAVIGATION PAGE ===== */
+
+.nav a.active,
+.nav a.on {
+  color: var(--gold2) !important;
+  background: rgba(214, 168, 79, 0.14) !important;
+  box-shadow: inset 0 0 0 1px rgba(214, 168, 79, 0.25);
+}
+
+.nav a.active:hover,
+.nav a.on:hover {
+  color: var(--gold2) !important;
+  background: rgba(214, 168, 79, 0.2) !important;
+}
+
+/* ===== SMOOTH BESTAS CARD EXPANSION ===== */
+
+.bestas-expandable .bestas-detail,
+.bestas-expandable .bestas-detail[hidden] {
+  display: block !important;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 0 solid transparent !important;
+
+  transition:
+    max-height 0.45s ease,
+    opacity 0.3s ease,
+    transform 0.35s ease,
+    margin-top 0.35s ease,
+    padding-top 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.bestas-expandable .bestas-detail:not([hidden]) {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+
+  margin-top: 12px !important;
+  padding-top: 12px !important;
+  border-top: 1px solid rgba(241, 204, 122, 0.2) !important;
+}
+
+/* Плавное увеличение карточки */
+.bestas-expandable {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bestas-expandable.is-expanded {
+  transform: translateY(-2px);
+  border-color: rgba(214, 168, 79, 0.5);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bestas-expandable,
+  .bestas-expandable .bestas-detail {
+    transition: none !important;
+  }
+}
+
+/* ===== BESTAS RULES — 3D FLIP CARDS ===== */
+
+#rules .bestas-expandable {
+  padding: 0 !important;
+  min-height: 250px;
+  perspective: 1200px;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none;
+  overflow: visible;
+}
+
+#rules .bestas-flip-inner {
+  position: relative;
+  min-height: 250px;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(.2, .75, .25, 1);
+  border-radius: 18px;
+}
+
+#rules .bestas-flip-front,
+#rules .bestas-flip-back {
+  box-sizing: border-box;
+  min-height: 250px;
+  padding: 24px;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--card, #0d1310);
+  border: 1px solid rgba(214, 168, 79, 0.25);
+}
+
+#rules .bestas-flip-front {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#rules .bestas-flip-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+#rules .bestas-flip-back h3 {
+  color: var(--gold2, #f1cc7a);
+  margin-bottom: 14px;
+}
+
+#rules .bestas-flip-back .bestas-detail {
+  max-height: 500px;
+  opacity: 1;
+  transform: none;
+  overflow: visible;
+}
+
+#rules .bestas-expandable.is-expanded .bestas-flip-inner {
+  transform: rotateY(180deg);
+}
+
+#rules .bestas-expandable:hover .bestas-flip-front,
+#rules .bestas-expandable:hover .bestas-flip-back {
+  border-color: rgba(241, 204, 122, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #rules .bestas-flip-inner {
+    transition: none;
+  }
+}
+
+/* Hide card prompts */
+.bestas-toggle-hint {
+  display: none !important;
+}
