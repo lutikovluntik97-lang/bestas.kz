@@ -362,10 +362,20 @@
         catch (_) { throw new Error("Сервер вернул неправильный ответ."); }
         typing.remove();
         if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
-        if (!data.reply) throw new Error("Сервер не вернул ответ AI.");
-        addMessage("ai", data.reply);
-        history.push({ role: "user", text: messageText }, { role: "model", text: data.reply });
-        history = history.slice(-10);
+        const aiReply = data.reply || data.answer;
+
+if (!aiReply) {
+    throw new Error(data.error || "Сервер не вернул ответ AI.");
+}
+
+addMessage("ai", aiReply);
+
+history.push(
+    { role: "user", text: messageText },
+    { role: "model", text: aiReply }
+);
+
+history = history.slice(-10);
       } catch (error) {
         console.error("BESTAS AI ERROR:", error);
         typing.remove();
