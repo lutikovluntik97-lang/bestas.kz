@@ -1,4 +1,4 @@
-/* ============ BESTAS.KZ — единый стиль ============ */
+﻿/* ============ BESTAS.KZ — единый стиль ============ */
 :root{
   --bg:#050706; --bg2:#090D0B; --card:#0D1310; --card2:#111914;
   --gold:#D6A84F; --gold2:#F1CC7A; --green:#27D5A0; --green-d:#12382E;
@@ -289,7 +289,7 @@ h1,h2,h3{font-family:Manrope,Inter,system-ui,sans-serif;letter-spacing:-.03em;li
 
 /* ---------- Reveal ---------- */
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.js .reveal.in{opacity:1;transform:none}
+.js .reveal.in,.js .reveal.is-visible,.js .reveal-up.in,.js .reveal-up.is-visible,.js [data-reveal].in,.js [data-reveal].is-visible{opacity:1;transform:none}
 
 /* ---------- Responsive ---------- */
 @media (max-width:1000px){
@@ -329,3 +329,32 @@ h1,h2,h3{font-family:Manrope,Inter,system-ui,sans-serif;letter-spacing:-.03em;li
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}
 }
+
+
+/* BESTAS GAME STONES FIX */
+.arena .stone {
+  width: 58px;
+  height: 52px;
+  min-width: 42px;
+  min-height: 38px;
+  --s1: #a99d86;
+  --s2: #716753;
+  --s3: #37301f;
+  z-index: 3;
+}
+.arena .stone:nth-of-type(1) { left: 25%; top: 42%; }
+.arena .stone:nth-of-type(2) { left: 37%; top: 55%; }
+.arena .stone:nth-of-type(3) { left: 50%; top: 38%; }
+.arena .stone:nth-of-type(4) { left: 63%; top: 54%; }
+.arena .stone:nth-of-type(5) { left: 75%; top: 42%; }
+.arena .stone.selected,
+.arena .stone.sel {
+  --s1: #f6dc9a;
+  --s2: #c69a42;
+  --s3: #6b4d18;
+  box-shadow: 0 0 0 3px rgba(241,204,122,.75), 0 0 30px rgba(214,168,79,.55);
+}
+.arena .stone.thrown,
+.arena .stone.flying { z-index: 6; }
+.arena .stone.collected { visibility: hidden; }
+
